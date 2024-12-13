@@ -21,6 +21,12 @@ Voici la structure du projet:
 
 
 ``` yml
+# Namespace pour préproduction
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: prod  # Nom du namespace.
+---
 # Déploiement pour Flask
 apiVersion: apps/v1  # Version de l'API Kubernetes utilisée pour définir un déploiement.
 kind: Deployment  # Décrit un objet de type Déploiement, utilisé pour gérer l'état d'une application.
@@ -150,6 +156,12 @@ spec:
 . Contenu du Manifest de préproduction
 
 ``` yml
+# Namespace pour préproduction
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: preprod  # Nom du namespace.
+---
 # Déploiement pour Flask
 apiVersion: apps/v1  # Version de l'API Kubernetes utilisée pour définir un déploiement.
 kind: Deployment  # Gère la création et la résilience des pods, garantit le bon nombre de répliques, et permet des mises à jour progressives (rolling updates) pour éviter les interruptions
